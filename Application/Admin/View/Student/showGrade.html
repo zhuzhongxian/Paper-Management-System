@@ -1,0 +1,86 @@
+<include file='Public/header' />
+<!DOCTYPE html>
+<html>
+<head>
+	<title>学生成绩</title>
+</head>
+<body>
+<table class="table table-striped">
+  <caption><h2>学生成绩</h2></caption>
+  <thead>
+    <tr>
+      <th>			</th>
+      <th>学号</th>
+      <th>姓名</th>
+      <th>开题指导教师成绩</th>
+      <th>开题答辩委员会成绩</th>
+      <th>论文指导教师成绩</th>
+      <th>论文答辩委员会成绩</th>
+      <th>最终成绩</th>
+      <th>学生状态</th>
+    </tr>
+  </thead>
+  <tbody>
+    <volist name='data' id='vol'>
+    <tr>
+      
+      <td>         </td>
+      <td>{$vol.id}</td>
+      <td>{$vol.name}</td>
+      <td>
+        <if condition="$vol.score1 eq -1">未上传
+        <else />{$vol.score1}
+        </if>
+      </td>
+      <td>
+        <if condition="$vol.score2 eq -1">未上传
+        <else />{$vol.score2}
+        </if>
+      </td>
+      <td>
+        <if condition="$vol.score3 eq -1">未上传
+        <else />{$vol.score3}
+        </if>
+      </td>
+      <td>
+        <if condition="$vol.score4 eq -1">未上传
+        <else />{$vol.score4}
+        </if>
+      </td>
+      <td>
+        <if condition="$vol.finally eq -1">未上传
+        <else />{$vol.finally}
+        </if>
+      </td>
+      <td>
+        <switch name='vol.state' >
+        <case value='0'>未选题</case> 
+        <case value='1'>未选题</case>
+        <case value='2'>选题已通过</case>
+        <case value='3'>选题未通过</case>
+        <case value='4'>已提交开题报告和开题PPT</case>
+        <case value='5'>已提交论文和答辩PPT</case>
+        <default />
+        </switch>
+      </td>
+     <!--  <td><a class="btn btn-default" href="__CONTROLLER__/edit/id/{$vol.id}" role="button">修改</a>
+      <a class="btn btn-primary" href="__CONTROLLER__/del/id/{$vol.id}" role="button">删除</a></td> -->
+    </tr>
+  </volist>
+  </tbody>
+</table>
+
+<center>
+<ul class="pagination" >
+    <a href="{$show}"></a>
+    <li><a href="#">&laquo;</a></li>
+    <li class="active"><a href="#">1</a></li>
+    <li class="disabled"><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">&raquo;</a></li>
+</ul>
+</center>
+</body>
+</html>

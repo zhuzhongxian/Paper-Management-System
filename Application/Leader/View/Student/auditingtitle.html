@@ -1,0 +1,52 @@
+<include file='Public/header' />
+
+        <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>审核题目</h1>
+            <div class="alert alert-info alert-dismissable">修改审核状态</div>
+          </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover tablesorter">
+                <thead>
+                  <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>题目</th>
+                    <th width="110px">审核状态</th>
+                    <th width="180px">点击修改审核状态</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <volist name="students" id="vo">
+                  <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.name}</td>
+                    <td>{$vo.topic}</td>
+              <if condition="$vo.topic_state2 eq 0">
+              <td>未审批</td>
+              <elseif condition="$vo.topic_state2 eq 1" />
+              <td>审核通过</td>
+              <elseif condition="$vo.topic_state2 eq 2" />
+              <td>审核不通过</td>
+              </if>  
+                  <td><a href="__CONTROLLER__/revisionreview/id/{$vo.id}/status/1">通过审核</a>|<a href="__CONTROLLER__/revisionreview/id/{$vo.id}/status/2">不通过审核</a></td> 
+                  </tr>
+                 </volist>
+                </tbody>
+              </table>
+            </div>
+
+        </div><!-- /.row -->
+      </div><!-- /.row -->
+      <div class="pages">
+                        {$fenye}
+                </div>
+      </div><!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+    <script src="__ADMIN__/js/common.js"></script>
+ <include file='Public/footer' />

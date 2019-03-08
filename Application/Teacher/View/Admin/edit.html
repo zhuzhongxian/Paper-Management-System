@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>指导老师页面</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="__PUBLIC__/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="__PUBLIC__/css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="__PUBLIC__/font-awesome/css/font-awesome.min.css">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="__PUBLIC__/css/morris-0.4.3.min.css">
+  </head>
+
+  <body>
+
+    <div id="wrapper">
+
+  <include file='Common/top'/>
+
+		
+      <div id="page-wrapper">
+
+        <div class="row">
+
+          <div class="col-lg-12">
+            <h1>修改<small>密码</small></h1>
+            <ol class="breadcrumb">
+              <li class="active"></li>
+            </ol>
+            
+          </div>
+        </div><!-- /.行  -->
+
+        <div class="row">
+          
+          </div>
+          
+          
+        </div><!-- /.row -->
+
+        <div class="col-lg-1">
+           </div>
+
+        
+          <div class="col-lg-6">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-clock-o"></i> 修改密码</h3>
+              </div>
+              <div class="panel-body">
+                <div class="list-group">
+                 
+
+<form method="post" class="form-horizontal" action="">
+  <input type="hidden" name="id" value="{$paper_teacher.id}">
+
+ 
+   <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
+    <div class="col-sm-5">
+      <input type="username" class="form-control" id="username" name="username" value="{$paper_teacher.name}">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+    <div class="col-sm-5">
+      <input type="password" class="form-control" id="password" name="password">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-5">
+      <button type="submit" class="btn btn-primary">
+       <i class="fa fa-gear"></i>
+         确定</button>
+    </div>
+  </div>
+</form>
+
+
+
+
+
+
+             
+                  
+                </div>
+               
+              </div>
+            </div>
+          </div>
+         
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+    <!-- JavaScript -->
+    <script src="__PUBLIC__/js/jquery-1.10.2.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.js"></script>
+
+    <!-- Page Specific Plugins -->    <script src="__PUBLIC__/js/raphael-min.js"></script>
+    <script src="__PUBLIC__/js/morris-0.4.3.min.js"></script>
+    <script src="__PUBLIC__/js/morris/chart-data-morris.js"></script>
+    <script src="__PUBLIC__/js/tablesorter/jquery.tablesorter.js"></script>
+    <script src="__PUBLIC__/js/tablesorter/tables.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<include file='Public/header' />
+
+        <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>资料下载</h1>
+            <div class="alert alert-info alert-dismissable">
+              下载文件
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover tablesorter">
+                <thead>
+                  <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>开题PPT</th>
+                    <th>开题报告</th>
+                    <th>答辩PPT</th>
+                    <th>论文</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <volist name="students" id="vo">
+                  <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.name}</td>
+                    <td>
+                      <if condition="$vo.ppt1 neq '' ">
+                      <a href="__CONTROLLER__/downloadfile/path/{$vo.ppt1}">下载</a>
+                      <else />
+                      未上传
+                      </if>
+                    </td>
+                    <td>
+                      <if condition="$vo.report neq '' ">
+                      <a href="__CONTROLLER__/downloadfile/path/{$vo.report}">下载</a>
+                      <else />
+                      未上传
+                      </if>
+                    </td>
+                    <td>
+                      <if condition="$vo.ppt2 neq '' ">
+                      <a href="__CONTROLLER__/downloadfile/path/{$vo.ppt2}">下载</a>
+                      <else />
+                      未上传
+                      </if>
+                    </td>
+                    <td>
+                      <if condition="$vo.paper neq '' ">
+                      <a href="__CONTROLLER__/downloadfile/path/{$vo.paper}">下载</a>
+                      <else />
+                      未上传
+                      </if>
+                    </td>
+                  </tr>
+                </volist>
+                </tbody>
+              </table>
+            </div>
+
+        </div><!-- /.row -->
+      </div><!-- /.row -->
+           <div class="pages">
+                        {$fenye}
+                </div>
+      </div><!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+    
+ <include file='Public/footer' />

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>指导老师页面</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="__PUBLIC__/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="__PUBLIC__/css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="__PUBLIC__/font-awesome/css/font-awesome.min.css">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="__PUBLIC__/css/morris-0.4.3.min.css">
+  </head>
+
+  <body>
+
+    <div id="wrapper">
+
+  <include file='Common/top'/>
+
+		<div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
+      <div id="page-wrapper">
+
+        <div class="row">
+          
+           <div class="col-lg-12">
+            <h1>审查<small>答辩题目</small> </h1>
+            <ol class="breadcrumb">
+              <li class="active"></li>
+            </ol>
+            
+          </div>
+        </div><!-- /.行  -->
+
+        
+          
+        </div><!-- /.row -->
+
+        
+
+        
+          
+          <div class="col-lg-12">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-money"></i> 指导学生论文</h3>
+              </div>
+              <div class="panel-body">
+
+                <div class="table-responsive">
+                  <table class="table table-bordered table-hover table-striped tablesorter">
+                    <thead>
+                      <tr>
+                        <th>学号 </th>
+                        <th>姓名 </th>
+                       
+                         <th>审核状态 </th>
+                         <th>操作</th>
+                      </tr>
+                      
+                    </thead>
+                    <tbody>
+                      <tbody>
+                         <volist name="list" id="vo">
+                      <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.name}</td>
+                         
+                          <td><if condition="$vo['topic_state1'] eq 1">
+                             审核通过
+                             <elseif condition="$vo['topic_state1'] eq 0"/>审核未通过
+                             <elseif condition="$vo['topic_state1'] eq -1"/>
+                             未审核
+                           </if>
+                        <td><div class="button-group"> <a class="button border-main" href="__CONTROLLER__/edit/id/{$vo.id}"> 审核</a>
+                          </div></td>
+                      </tr>
+                      
+                      
+                      
+                    </volist>
+                    </tbody>
+                    </tbody>
+                  </table>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+    <!-- JavaScript -->
+    <script src="__PUBLIC__/js/jquery-1.10.2.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.js"></script>
+
+    <!-- Page Specific Plugins -->    <script src="__PUBLIC__/js/raphael-min.js"></script>
+    <script src="__PUBLIC__/js/morris-0.4.3.min.js"></script>
+    <script src="__PUBLIC__/js/morris/chart-data-morris.js"></script>
+    <script src="__PUBLIC__/js/tablesorter/jquery.tablesorter.js"></script>
+    <script src="__PUBLIC__/js/tablesorter/tables.js"></script>
+
+  </body>
+</html>
